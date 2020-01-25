@@ -39,12 +39,9 @@
             <div class="col-sm-10">
                 <select name="age" class="form-control">
                     <option>Select Your Age</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
+                    <?php foreach ($ages as $age) { ?>
+                    <option value="<?php echo $age; ?>"><?php echo $age; ?></option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
