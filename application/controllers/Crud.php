@@ -18,5 +18,14 @@ class Crud extends CI_Controller {
         $this->load->view('crud/index', $data);
         $this->load->view('crud/templates/footer');
     }
+    
+    function edit($id){
+        //echo "crud edit controller : ".$id;
+        $data['id'] = $id;
+        // based on this id, we will get the records from the database. Pass it to the edit view
+        $this->load->view('crud/templates/header');
+        $this->load->view('crud/edit', $data);
+        $this->load->view('crud/templates/footer');
+    }
 }
 
