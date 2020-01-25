@@ -11,7 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Crud extends CI_Controller {
     function index(){
         //echo "crud index controller";
+        $this->load->view('crud/templates/header');
         $this->load->view('crud/index');
+        $this->load->view('crud/templates/footer');
     }
 }
 
