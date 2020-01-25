@@ -12,19 +12,21 @@
             </tr> 
         </thead> 
         <tbody> 
-                <tr> 
-                    <th scope="row">1</th> 
-                    <td>Vivek Vengala</td> 
-                    <td>Vivek Vengala</td> 
-                    <td>Male</td> 
-                    <td>28</td> 
-                    <td>
-                        <a href="update.php?id=#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+            <?php foreach ($users as $user) {  ?>
+            <tr> 
+                <th scope="row">1</th> 
+                <td><?php echo $user['firstname'] . " " . $user['lastname']; ?></td> 
+                <td><?php echo $user['email']; ?></td> 
+                <td><?php echo $user['gender']; ?></td> 
+                <td><?php echo $user['age']; ?></td> 
+                <td>
+                    <a href="update.php?id=#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
 
-                        <a href="delete.php?#" class="btn btn-info btn-xs" >Delete</a>
+                    <a href="delete.php?#" class="btn btn-info btn-xs" >Delete</a>
 
-                    </td>
-                </tr> 
+                </td>
+            </tr> 
+            <?php } ?>
         </tbody> 
     </table>
 </div>

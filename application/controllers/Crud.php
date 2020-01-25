@@ -41,10 +41,11 @@ class Crud extends CI_Controller {
     function view(){
         //we will get the user information from model method - we will with sample data
         
-        
+        $data['users'][] = array('firstname' => 'Vivek', 'lastname' => 'Vengala', 'email' => 'vivek@codingcyber.com', 'gender' => 'male', 'age' => '28');
+        $data['users'][] = array('firstname' => 'Vivek', 'lastname' => 'Vengala', 'email' => 'vivek@codingcyber.com', 'gender' => 'male', 'age' => '20');
         
         $this->load->view('crud/templates/header');
-        $this->load->view('crud/view');
+        $this->load->view('crud/view', $data);
         $this->load->view('crud/templates/footer');
     }
 }
