@@ -9,6 +9,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Crud extends CI_Controller {
+    // create operation
     function index(){
         //echo "crud index controller";
         //$data['age'] = 20;
@@ -19,6 +20,7 @@ class Crud extends CI_Controller {
         $this->load->view('crud/templates/footer');
     }
     
+    // update operation
     function edit($id){
         //echo "crud edit controller : ".$id;
         $data['id'] = $id;
@@ -37,7 +39,7 @@ class Crud extends CI_Controller {
     }
     
     // create view controller & views - after trying watch this video
-    
+    // read operation
     function view(){
         //we will get the user information from model method - we will with sample data
         
@@ -47,6 +49,12 @@ class Crud extends CI_Controller {
         $this->load->view('crud/templates/header');
         $this->load->view('crud/view', $data);
         $this->load->view('crud/templates/footer');
+    }
+    
+    // delete operation
+    function delete($id){
+        echo "delete controller method : " . $id;
+        // we will pass this to model method for deleting the record.
     }
 }
 
