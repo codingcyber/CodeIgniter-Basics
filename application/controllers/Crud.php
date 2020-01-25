@@ -35,5 +35,17 @@ class Crud extends CI_Controller {
         $this->load->view('crud/edit', $data);
         $this->load->view('crud/templates/footer');
     }
+    
+    // create view controller & views - after trying watch this video
+    
+    function view(){
+        //we will get the user information from model method - we will with sample data
+        
+        
+        
+        $this->load->view('crud/templates/header');
+        $this->load->view('crud/view');
+        $this->load->view('crud/templates/footer');
+    }
 }
 
