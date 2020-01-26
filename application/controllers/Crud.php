@@ -26,15 +26,10 @@ class Crud extends CI_Controller {
         $data['id'] = $id;
         // based on this id, we will get the records from the database. Pass it to the edit view - model method
         
-        $data['ages'] = array(20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30);
-        $data['firstname'] = "Vivek";
-        $data['lastname'] = "Vengala";
-        $data['email'] = "vivek@codingcyber.com";
-        $data['gender'] = "male";
-        $data['age'] = 22;
-        
+        $this->load->model('crud_model');
+        $userData = $this->crud_model->getRecord($id);
         $this->load->view('crud/templates/header');
-        $this->load->view('crud/edit', $data);
+        $this->load->view('crud/edit', $userData);
         $this->load->view('crud/templates/footer');
     }
     
