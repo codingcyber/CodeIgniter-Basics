@@ -14,9 +14,9 @@
         <tbody> 
             <?php foreach ($users as $user) {  ?>
             <tr> 
-                <th scope="row">1</th> 
-                <td><?php echo $user['firstname'] . " " . $user['lastname']; ?></td> 
-                <td><?php echo $user['email']; ?></td> 
+                <th scope="row"><?php echo $user['id']; ?></th> 
+                <td><?php echo $user['first_name'] . " " . $user['last_name']; ?></td> 
+                <td><?php echo $user['email_id']; ?></td> 
                 <td><?php echo $user['gender']; ?></td> 
                 <td><?php echo $user['age']; ?></td> 
                 <td>

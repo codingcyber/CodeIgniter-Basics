@@ -60,5 +60,16 @@ class Crud extends CI_Controller {
 		$this->load->model('crud_model');
 		$this->crud_model->dbtest();
 	}
+	
+	// Query method to CRUD INSERT/SELECT/UPDATE/DELETE
+
+	function viewdbtest(){
+		$this->load->model('dbtest_model');
+		$data['users'] = $this->dbtest_model->queryselect();
+		
+		$this->load->view('crud/templates/header');
+        $this->load->view('crud/view', $data);
+        $this->load->view('crud/templates/footer');
+	}
 }
 
