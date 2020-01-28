@@ -71,5 +71,22 @@ class Crud extends CI_Controller {
         $this->load->view('crud/view', $data);
         $this->load->view('crud/templates/footer');
 	}
+	
+	function insertdbtest(){
+		$this->load->database();
+		$this->load->model('dbtest_model');
+		$fname = "Lis'a";
+		$fname = $this->db->escape($fname); // while using the escape remove the quote marks in model method sql
+		$lname = "Lopez";
+		$email = "lisalopez@example.com";
+		$gender = "female";
+		$age = "25";
+		$result = $this->dbtest_model->queryinsert($fname, $lname, $email, $gender, $age);
+		if($result){
+			echo "Record Inserted";
+		}else{
+			echo "Failed to Insert Record";
+		}
+	}
 }
 

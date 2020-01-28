@@ -11,13 +11,23 @@ class Dbtest_model extends CI_Model {
 		// we should load the database (autoload)
 		$this->load->database();
 		$query = $this->db->query('SELECT * FROM crud');
-		$result = $query->result_array();
-		return $result;
+		return $query->result_array();
+		//$result = $query->result_array();
+		//return $result;
 	}
 	
 	// Insert Operation with Query Method
-	public function queryinsert(){
-		
+	public function queryinsert($fname, $lname, $email, $gender, $age){
+		//
+		$this->load->database();
+		$query = $this->db->query("INSERT INTO `crud` (first_name, last_name, email_id, gender, age) VALUES ($fname, '$lname', '$email', '$gender', '$age')");
+		//$result = $query->affected_array();
+		//return $this->db->affected_rows();
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	// Update Operation with Query Method
