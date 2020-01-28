@@ -28,4 +28,8 @@ class Crud_model extends CI_Model {
         
         return $data;
     }
+	
+	public function dbtest(){
+		$this->load->database();
+	}
 }

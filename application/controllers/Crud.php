@@ -53,5 +53,12 @@ class Crud extends CI_Controller {
         echo "delete controller method : " . $id;
         // we will pass this to model method for deleting the record.
     }
+	
+	// test the database connecion
+	
+	function databasetest(){
+		$this->load->model('crud_model');
+		$this->crud_model->dbtest();
+	}
 }
 
