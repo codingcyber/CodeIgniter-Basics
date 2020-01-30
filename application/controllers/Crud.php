@@ -104,5 +104,16 @@ class Crud extends CI_Controller {
 			echo "Failed to Update the Record";
 		}
 	}
+	
+	function deletedbtest(){
+		$this->load->model('dbtest_model');
+		$id = 18;
+		$result = $this->dbtest_model->querydelete($id);
+		if($result){
+			echo "Record deleted";
+		}else{
+			echo "Failed to delete the Record";
+		}
+	}
 }
 

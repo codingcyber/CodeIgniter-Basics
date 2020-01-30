@@ -45,7 +45,15 @@ class Dbtest_model extends CI_Model {
 	}
 	
 	// Delete Operation with Query Method
-	public function querydelete(){
-		
+	public function querydelete($id){
+		$this->load->database();
+		$query = $this->db->query("DELETE FROM `crud` WHERE id=$id");
+		//$result = $query->affected_array();
+		//return $this->db->affected_rows();
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
