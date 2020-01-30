@@ -88,5 +88,21 @@ class Crud extends CI_Controller {
 			echo "Failed to Insert Record";
 		}
 	}
+	
+	function updatedbtest(){
+		$this->load->model('dbtest_model');
+		$fname = "Lisa2";
+		$lname = "Lopez2";
+		$email = "lisalopez2@example.com";
+		$gender = "female";
+		$age = "23";
+		$id = 17;
+		$result = $this->dbtest_model->queryupdate($id, $fname, $lname, $email, $gender, $age);
+		if($result){
+			echo "Record Updated";
+		}else{
+			echo "Failed to Update the Record";
+		}
+	}
 }
 

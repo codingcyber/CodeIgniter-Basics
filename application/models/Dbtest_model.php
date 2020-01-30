@@ -31,8 +31,17 @@ class Dbtest_model extends CI_Model {
 	}
 	
 	// Update Operation with Query Method
-	public function queryupdate(){
-		
+	public function queryupdate($id, $fname, $lname, $email, $gender, $age){
+		//UPDATE `crud` SET first_name='$fname', last_name='$lname', gender='$gender', age=$age, email_id='$email' WHERE id=$id
+		$this->load->database();
+		$query = $this->db->query("UPDATE `crud` SET first_name='$fname', last_name='$lname', gender='$gender', age=$age, email_id='$email' WHERE id=$id");
+		//$result = $query->affected_array();
+		//return $this->db->affected_rows();
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	// Delete Operation with Query Method
