@@ -124,5 +124,16 @@ class Crud extends CI_Controller {
         $this->load->view('crud/view', $data);
         $this->load->view('crud/templates/footer');
 	}
+	
+	function inserttest(){
+		$this->load->database();
+		$this->load->model('dbtest_model');
+		$result = $this->dbtest_model->qbinsert();
+		if($result){
+			echo "Record Inserted";
+		}else{
+			echo "Failed to Insert Record";
+		}
+	}
 }
 

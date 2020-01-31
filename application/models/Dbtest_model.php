@@ -81,6 +81,20 @@ class Dbtest_model extends CI_Model {
 
 	public function qbinsert(){
 		$this->load->database();
+		$data = array(
+				'first_name' => 'Justine',
+				'last_name' => 'Andrews',
+				'gender' => 'male',
+				'age' => '31',
+				'email_id' => 'justine87@example.com'
+		);
+		$query = $this->db->insert('crud', $data);
+
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public function qbupdate(){
