@@ -115,5 +115,14 @@ class Crud extends CI_Controller {
 			echo "Failed to delete the Record";
 		}
 	}
+
+	function viewtest(){
+		$this->load->model('dbtest_model');
+		$data['users'] = $this->dbtest_model->qbselect();
+		
+		$this->load->view('crud/templates/header');
+        $this->load->view('crud/view', $data);
+        $this->load->view('crud/templates/footer');
+	}
 }
 

@@ -56,4 +56,38 @@ class Dbtest_model extends CI_Model {
 			return false;
 		}
 	}
+
+	public function qbselect(){
+		$this->load->database();
+		//$query = $this->db->get('crud', 5, 2); // limit, offset
+		//$query = $this->db->get_where('crud', array('gender' => 'male'), 5, 2); // permits you to add a where clause in the second parameter, instead of using db->where() function
+		
+		// $this->db->select('first_name, last_name, email_id, gender, age, id'); // specific column names
+		// $this->db->from('crud');
+		// //$this->db->join('users', 'users.id=crud.id'); // for joining multiple tables
+		// $query = $this->db->get();
+
+		//$this->db->where('gender', 'male');
+		//$this->db->where('first_name !=', 'vivek');
+		//$this->db->or_where('id >', 4);
+		//$query = $this->db->get('crud1');
+
+		$where = "`gender` = 'male' AND `first_name` = 'Daniel'";
+		$this->db->where($where);
+		$query = $this->db->get('crud');
+		
+		return $query->result_array();
+	}
+
+	public function qbinsert(){
+		$this->load->database();
+	}
+
+	public function qbupdate(){
+		$this->load->database();
+	}
+
+	public function qbdelete(){
+		$this->load->database();
+	}
 }
