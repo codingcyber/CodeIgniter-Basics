@@ -116,8 +116,19 @@ class Dbtest_model extends CI_Model {
         }
     }
 
-    public function qbdelete() {
+    public function qbdelete($id) {
         $this->load->database();
+        
+        // $this->db->where('id', 14);
+        // $query = $this->db->delete('crud');
+        
+        $query = $this->db->delete('crud', array('id' => $id));
+        
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
